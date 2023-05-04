@@ -1,0 +1,22 @@
+{
+    "name": "Notification Button",
+    "description": "A notification button on divs with 'Back Soon' Messages",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+      "default_icon": "flink_logo.png"
+    },
+    "content_scripts":[
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": [
+              "src/button.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": ["src/background.js"],
+        "persistent": true
+    },
+    "permissions": ["notifications", "storage"]
+}
